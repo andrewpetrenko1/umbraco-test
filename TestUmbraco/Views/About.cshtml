@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.About>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+  Layout = "Master.cshtml";
+}
+
+<h1 class="text-center mb-4">@Model.AboutTitle</h1>
+@Html.GetGridHtml(Model, "media")
+@if (Model.Map != null) {
+<div class="m-4">
+    @Html.Partial("Our.Umbraco.GMaps/MapScripts", Model.Map)
+</div>
+}

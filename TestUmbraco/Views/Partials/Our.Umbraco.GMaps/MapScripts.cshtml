@@ -1,0 +1,22 @@
+﻿@using Newtonsoft.Json
+@model Our.Umbraco.GMaps.Models.GmapsModel
+
+@if (Model.Address != null && Model.MapConfig != null)
+{
+  <div id="map" style="width: 100%; min-height: 400px;"></div>
+
+  <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of the chosen point
+            var markerPosition = new google.maps.LatLng(@(Model.Address.Coordinates));
+
+            var map = new google.maps.Map(document.getElementById('map'),
+                { zoom: 16, center: markerPosition } );
+            // The marker, positioned at the chosen point
+            var marker = new google.maps.Marker({ position: markerPosition, map: map });
+        }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=@Model.MapConfig.ApiKey&callback=initMap"></script>
+}

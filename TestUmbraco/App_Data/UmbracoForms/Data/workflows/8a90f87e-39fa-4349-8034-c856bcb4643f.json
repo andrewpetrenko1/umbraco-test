@@ -1,0 +1,20 @@
+{
+  "id": "8a90f87e-39fa-4349-8034-c856bcb4643f",
+  "name": "Send Example Templ",
+  "form": "a4b348ff-29b4-4c7b-8120-ceb7a0a9e3cd",
+  "active": true,
+  "includeSensitiveData": "False",
+  "workflowTypeId": "17c61629-d984-4e86-b43b-a8407b3efea9",
+  "executesOn": "Submitted",
+  "settings": {
+    "RazorViewFilePath": "Forms/Emails/Example-Template.cshtml",
+    "Attachment": "",
+    "Email": "ndrwpetrenko@gmail.com",
+    "CcEmail": "",
+    "BccEmail": "",
+    "SenderEmail": "test-umbraco",
+    "ReplyToEmail": "",
+    "Subject": "Testing"
+  },
+  "sortOrder": 0
+}

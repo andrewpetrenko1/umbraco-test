@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticleMain>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+  Layout = "Master.cshtml";
+}
+
+@{
+  var selection = Umbraco.Content(Guid.Parse("4c9aa585-90a5-4334-8d5b-84a5cb8de87a"))
+    .ChildrenOfType("atricleItem")
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate);
+}
+
+<div class="container-fluid">
+  <div class="row">
+    @foreach (var item in selection)
+    {
+      var image = item.Value<IPublishedContent>("ItemImage");
+      <div class="card col-md-3 m-3 pt-2">
+        <a href="@item.Url">
+          <img class="card-img-top img-fluid" src="@image.Url">
+          <div class="card-body">
+            <h3>@item.Value("ItemTitle")</h3>
+          </div>
+        </a>
+      </div>
+    }
+  </div>
+</div>

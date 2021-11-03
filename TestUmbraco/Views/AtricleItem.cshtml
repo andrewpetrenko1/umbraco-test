@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<AtricleItem>
+@{
+  Layout = "Master.cshtml";
+}
+
+
+@{ 
+  //var image = Model.Value<IPublishedContent>("ItemImage").Url();
+  var image = Model.ItemImage?.Url;
+}
+
+<section>
+    <h1>@Model.ItemTitle</h1>
+    <img src="@image" class="img-fluid"/>
+    <p class="lead p-3">@Model.ItemContent</p>
+</section>
