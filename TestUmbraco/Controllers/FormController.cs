@@ -25,7 +25,7 @@ namespace TestUmbraco.Controllers
         {
           var msg = new MailMessage();
           msg.Body = $"Name: {model.Name}\nEmail: {model.Email}\nMessage: {model.Message}";
-          msg.To.Add("ndrwpetrenko@gmail.com");
+          msg.To.Add(model.EmailTo);
           client.Send(msg);
         }
         return RedirectToCurrentUmbracoPage("submit=true");

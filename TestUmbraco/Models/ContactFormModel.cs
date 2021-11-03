@@ -14,5 +14,7 @@ namespace TestUmbraco.Models
     public string Email { get; set; }
     [Required]
     public string Message { get; set; }
+    [Required]
+    public string EmailTo { get; set; }
   }
 }

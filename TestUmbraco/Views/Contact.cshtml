@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Contact>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+  Layout = "Master.cshtml";
 }
 @using TestUmbraco.Models;
 
@@ -9,7 +9,7 @@
   @*Umbraco Form*@
   @*@Umbraco.RenderMacro("renderUmbracoForm", new { FormGuid = "a4b348ff-29b4-4c7b-8120-ceb7a0a9e3cd", ExcludeScripts = "0" })*@
 
-  @Model.Value("Form")
+  @Html.Partial("~/Views/Partials/ContactFormView.cshtml", new ContactFormModel(), new ViewDataDictionary {{ "EmailTo", Model.EmailTo }})
 
 </div>
 

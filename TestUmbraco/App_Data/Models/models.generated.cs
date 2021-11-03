@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "709f15eb95bf3604")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6cfa9db9b4fddb1c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -251,11 +251,11 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Edit Form
+		/// EmailTo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.0")]
-		[ImplementPropertyType("form")]
-		public virtual global::System.Web.IHtmlString Form => this.Value<global::System.Web.IHtmlString>("form");
+		[ImplementPropertyType("emailTo")]
+		public virtual string EmailTo => this.Value<string>("emailTo");
 	}
 
 	/// <summary>Map frame</summary>
